@@ -10,7 +10,7 @@
 
 ## Установка
 **Windows**
-Скачайте и установите клиентское приложение SQLite (sqlite-tools-win-x64)
+Скачайте и установите клиентское приложение SQLite (sqlite-tools-win-x64) https://github.com/VetrovSV/DataBases/blob/main/SQLite.md
 со страницы sqlite.org/download.html.
 
 **Ubuntu**

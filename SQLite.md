@@ -74,7 +74,7 @@ sqlite> SELECT title FROM albums;
 
 Прервать выполнение текущей операции — <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
-Перемещаться по словам введённой команды — <kbd>Ctrl</kbd> + <kbd>&larr;</kbd>; <kbd>Ctrl</kbd> + <kbd>&larr;</kbd>.
+Перемещаться по словам введённой команды — <kbd>Ctrl</kbd> + <kbd>&larr;</kbd>; <kbd>Ctrl</kbd> + <kbd>&rarr;</kbd>.
 
 Удобнее всего записывать и редактировать команды в отдельном текстовом редакторе (например Sublime Text), а потом вставлять их (ПКМ в Windows) в консоль SQLite.
 

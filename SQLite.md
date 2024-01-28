@@ -81,4 +81,5 @@ sqlite> SELECT title FROM albums;
 
 
 ## См. также
-- SQLlite
+- клиентское приложение для СУБД DBeaver
+- Работа с СУБД в Java: https://github.com/ivtipm/BigDataLanguages/tree/main/Java/DataBase

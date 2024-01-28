@@ -2,6 +2,7 @@
 ## SQLite
 Пекет `sqlite3` уже входит в стандартную библиотеку Python.
 
+Документация: https://docs.python.org/3/library/sqlite3.html
 
 #### Подключение к БД
 ```python
@@ -14,6 +15,7 @@ connection.close()
 ```
 
 
+
 #### Запросы
 ```python
 # объект для совершения запросов к БД
@@ -21,13 +23,23 @@ cursor = connection.cursor()
 
 # выполнение запроса
 cursor.execute('SELECT * FROM Users')
-# получение всех данных
+# получение результата запроса в виде списка
 users = cursor.fetchall()
 
-# вывод всех строк из рещзультата запроса
+# вывод всех строк из результата запроса
 for user in users:
-  print(user)
+    # user -- кортеж (tuple)
+    print(user)
+    # типы элементов кортежа соответствуют типам данных каждого поля в таблице
 ```
+
+Для получения перечня всех таблиц тоже используется запрос select к служебной таблице
+```python
+cursor = conn.cursor()
+cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+print(cursor.fetchall())
+```
+
 ### todo: ORM
 
 ## См. также

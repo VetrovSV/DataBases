@@ -82,4 +82,5 @@ sqlite> SELECT title FROM albums;
 
 ## См. также
 - клиентское приложение для СУБД DBeaver
+- [работа с SQLite в Python](python.md)
 - Работа с СУБД в Java: https://github.com/ivtipm/BigDataLanguages/tree/main/Java/DataBase

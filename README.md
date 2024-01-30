@@ -5,3 +5,4 @@
 
 # Ссылки
 - https://sql-academy.org/ru/guide — Интерактивный курс по SQL
+- https://leetcode.com/studyplan/top-sql-50/ -- 50 почти простых задач на значение  SQL

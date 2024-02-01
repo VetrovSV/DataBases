@@ -20,9 +20,14 @@ Window > Preferences > User Interface > Appearance > Colors and Fonts > DBeaver 
 
 **Выполнение SQL**
 ПКМ на подключении > 
-* Open SQL Script (можно выполнить несколько SQL операторов за один раз)\
+* Открыть SQL скрипт (Open SQL Script)\
+  В этом режиме удобно выполнять несколько SQL операторов за один раз)\
 или
-* Open SQL Console
+* Open SQL Console\
+  Режим хорошо подходит для выполнения одиночных операторов.
+
+
+![](assets/dbeaver_new_sql_script.png)
 
 <kbd>Ctrl</kbd> + <kbd>Enter</kbd> — выполнить операцию, записанную в текущей строке.
 

@@ -30,7 +30,7 @@ Window > Preferences > User Interface > Appearance > Colors and Fonts > DBeaver 
 ![](assets/dbeaver_table.png)
 
 
-**Выполнение SQL**
+**Выполнение SQL**\
 ПКМ на подключении > 
 * Открыть SQL скрипт (Open SQL Script)\
   В этом режиме удобно выполнять несколько SQL операторов за один раз)\

@@ -12,6 +12,8 @@
 
 Имеет API для популярных языков включая Python, C++, C, Java, C#.
 
+Информация о MySQL на сайте https://stackshare.io/mysql.
+
 
 ### Установка
 

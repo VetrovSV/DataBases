@@ -174,6 +174,13 @@ show databases;
 exit;
 ```
 
+Выполнить консольную команду из mysql клиента:
+```sql
+system <my-command>
+
+\! <my-command>
+```
+
 Запустить скрипт безопасности для завершения настройки
 ```bash
 sudo mysql_secure_installation

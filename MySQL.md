@@ -283,5 +283,27 @@ mysql -h 192.168.1.1 -u user_db0 -p
 create database <database_name>;
 ```
 
+Задать текущую БД
+```sql
+use database_name;
+```
+
+```sql
+CREATE TABLE test_db.Staff (    id       INT          PRIMARY KEY AUTO_INCREMENT,    name     VARCHAR(255) NOT NULL,    position VARCHAR(30),    birthday DATE         NOT NULL,    has_children BOOLEAN  DEFAULT(FALSE) NOT NULL,    phone VARCHAR(20)     UNIQUE NOT NULL  );
+```
+
+```sql
+show tables;
+```
+
+```sql
+show create table;
+```
+
+```sql
+insert into Staff (name, position, birthday, phone )
+values ('Ivanov Ivan', 'Selesman', '1980-09-30', '+7 123 4567');
+```
+
 ## Ссылки
 - https://www.mysqltutorial.org/

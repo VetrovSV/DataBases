@@ -67,6 +67,10 @@ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw   -v my_data_fo
 - `-d` — запуск в режиме демона (фонового процесса, сервиса)	
 - `mysql:tag` — название и версия образа
 
+Имя папки, где хранятся БД записано в переменной datadir:
+```sql
+select @@datadir
+```
 
 **Подключение к серверу в контейнере докера**
 ```bash

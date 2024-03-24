@@ -107,7 +107,7 @@ show grants for 'user01'@'%';
 
 
 
-## Начальная настройка
+## Начальная настройка, создание пользователей
 
 #### Задание пароля доступа главного администратора (суперпользоватея) к серверу СУБД
 **Linux**
@@ -251,7 +251,7 @@ sudo mysql_secure_installation
 См. также `mysqladmin` - клиентское приложение MySQL для администрирования сервера.
 
 
-## Подключение
+# Подключение
 Для подключения к серверу MySQL можно использовать любое клиентское приложение
 - mysql, mysqladmin - консольное клиентское приложение и приложение для администрирования
 - MySQL Workbench - клиентское приложение (с дополнительными возможностями для проектирование БД)
@@ -283,35 +283,76 @@ mysql -h <ip>
 ```bash
 mysql -h 192.168.1.1 -u user_db0 -p
 ```
-Подключиться к серверу по адресу `192.168.1.1` (адрес в локальной сети) с именем пользователя `user_db0`, `-p` — после подключения будет запроше пароль пользователя. 
+Подключиться к серверу по адресу `192.168.1.1` (адрес в локальной сети) с именем пользователя `user_db0`, `-p` — после подключения будет запрошен пароль пользователя. 
 
 ## Создание БД, таблиц.
 
+
+Создание новой базы данных
 ```sql
-create database <database_name>;
+create database [if not exists] <database_name>;
 ```
+`create scheme` - синоним (в MySQL).
+
+Показать существующие БД: `show databases`;
 
 Задать текущую БД
 ```sql
 use database_name;
 ```
+Задавать текущую БД полезно, так не придётся каждый раз указывать имя БД при обращением к таблице.
 
+Создание таблицы.
 ```sql
-CREATE TABLE test_db.Staff (    id       INT          PRIMARY KEY AUTO_INCREMENT,    name     VARCHAR(255) NOT NULL,    position VARCHAR(30),    birthday DATE         NOT NULL,    has_children BOOLEAN  DEFAULT(FALSE) NOT NULL,    phone VARCHAR(20)     UNIQUE NOT NULL  );
+CREATE TABLE test_db.Staff (    
+	id       		INT          	PRIMARY KEY AUTO_INCREMENT,    
+	name     		VARCHAR(255) 	NOT NULL,    
+	position 		VARCHAR(30),    
+	birthday 		DATE         	NOT NULL,    
+	has_children 	BOOLEAN  		DEFAULT(FALSE) NOT NULL,    
+	phone 			VARCHAR(20)     UNIQUE NOT NULL  
+	);
 ```
 
+`test_db` - имя БД, если БД выбрана (`use database`) то указывать не обязательно.
+
+Показать список таблиц в текущей БД
 ```sql
 show tables;
 ```
 
-```sql
-show create table;
-```
-
+Добавление данных в таблицу:
 ```sql
 insert into Staff (name, position, birthday, phone )
 values ('Ivanov Ivan', 'Selesman', '1980-09-30', '+7 123 4567');
 ```
 
-## Ссылки
+# Производительность
+Индексы
+
+# Резервное копирование
+
+# Системные переменные
+
+Просмотреть список системных переменных:
+
+```sql
+show variables
+```
+
+Системные переменные можно изменять динамически во время работы сервера 
+с помощью команды SET. Например, изменить значение системной переменной:
+
+```sql
+SET GLOBAL variable_name = value;
+```
+
+
+
+Активные соединения:
+```sql
+show processlist;
+```
+
+# Ссылки
 - https://www.mysqltutorial.org/

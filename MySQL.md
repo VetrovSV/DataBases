@@ -42,7 +42,10 @@ sudo apt install mysql-client
 **Windows**
 ...
 
-Подробнее об установке: https://www.mysqltutorial.org/getting-started-with-mysql/install-mysql/ или https://dev.mysql.com/doc/refman/8.3/en/installing.html 
+Подробнее об установке: 
+https://selectel.ru/blog/tutorials/how-to-install-mysql-on-windows/ \
+или https://www.mysqltutorial.org/getting-started-with-mysql/install-mysql/ (английский) 
+или https://dev.mysql.com/doc/refman/8.3/en/installing.html (английский) 
 
 
 

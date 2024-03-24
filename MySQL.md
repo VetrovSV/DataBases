@@ -352,7 +352,47 @@ mysql -h <ip>   -u <user_name>  -p  < employees.sql
 # Производительность
 Индексы
 
-# Резервное копирование
+# Резервное копирование, экспорт и импорт
+**Сохранить БД `mydatabase` в sql файл**
+```bash
+mysqldump -h <ip> -u username -p   mydatabase > dump.sql
+```
+В файл `dump.sql` будут сохранены все инструкции, необходимые для настройки БД, создания таблиц, индексов, вставки данных и т.д.
+
+
+**Сохранить только одну таблицу `mytable` из БД `mydatabase` в sql файл**
+```bash
+mysqldump -h <ip> -u username -p   mydatabase mytable > mydatabase_mytable_dump.sql
+```
+
+
+**Создать БД из sql файла**
+```bash
+mysql -u username -p database_name < dump.sql
+```
+
+## Работа изнутри СУБД
+**Выгрузка в CSV файл:**
+```sql
+SELECT * FROM myTable
+INTO OUTFILE '/path/to/your/file.csv'
+FIELDS TERMINATED BY ','
+ENCLOSED BY '\"'
+LINES TERMINATED BY '\n';
+```
+Здесь myTable - это имя таблицы, из которой вы хотите выгрузить данные, а /path/to/your/file.csv - это путь и имя файла, в который вы хотите сохранить данные.
+
+
+**Загрузка данных из CSV файла** в MySQL таблицу:
+```sql
+LOAD DATA INFILE '/path/to/your/file.csv'
+INTO TABLE myTable
+FIELDS TERMINATED BY ','
+ENCLOSED BY '\"'
+LINES TERMINATED BY '\n';
+```
+Здесь myTable - это имя таблицы, в которую вы хотите загрузить данные, а /path/to/your/file.csv - это путь и имя файла, из которого вы хотите загрузить данные
+
 
 # Переменные
 
@@ -381,6 +421,11 @@ SET GLOBAL variable_name = value;
 ```
 
 # Состояние и логирование
+Версия сервера
+```sql
+select version();
+```
+
 Активные соединения:
 ```sql
 show processlist;

@@ -18,6 +18,8 @@ Window > Preferences > User Interface > Appearance > Colors and Fonts > DBeaver 
 **Импорт данных из файлов (например csv) в БД**\
 ПКМ на БД > Import (импорт) > Выбор файла, настройка импорта, просмотр таблицы, [готово]
 
+<img src="assets/dbeaver_import.png">
+
 **Пример БД (SQLite)**
 Меню Help > Create Sample Database\
 

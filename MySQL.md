@@ -392,10 +392,44 @@ MySQL [employees]> explain select * from employees where last_name = 'Codd';
 </details>
 
 ## Индексы
+
+**Создание**
+
 ```sql
 create index <index_name>
 on <table_name (column1, column2, ...)>;
 ```
+где:
+- index_name - это имя индекса, который вы хотите создать.
+- table_name - это имя таблицы, в которой вы хотите создать индекс.
+- column - это имена столбцов (часто всего одного), для которого создаётся индекс.
+
+**Просмотр**
+```sql
+SHOW INDEXES FROM table_name;
+```
+
+**Удаление**
+```sql
+ALTER TABLE table_name DROP INDEX index_name;
+```
+
+См. также алгоритм бинарного поиска, бинарное дерево поиска.
+
+
+## Лог медленных запросов
+Конфигурация средствми SQL (работает до перезапуска):
+```sql
+-- включить логирование медленных запросов
+SET GLOBAL slow_query_log = 'ON';
+-- файл лога
+SET GLOBAL slow_query_log_file = '/path/to/your/log/file.log';
+-- минимальное время выполнения запроса в секундах, чтобы считать его медленным
+SET GLOBAL long_query_time = 2;
+```
+
+Для постоянного логирования стоит задать парметр в файле конфигурации сервера: my.cnf.
+
 
 # Резервное копирование, экспорт и импорт
 **Сохранить БД `mydatabase` в sql файл**

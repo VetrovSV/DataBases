@@ -11,7 +11,8 @@
 - Активно развивается, часто появляются новые возможности.
 - Работает на Windows, Linux, MacOS и других ОС.
 - Есть драйверы для всех популярных языков программировния.
-- Сайт: https://www.mongodb.com/
+- Скачать: https://www.mongodb.com/try/download/community
+- Последняя версия (апрель 2024) - 7.0.8
 
 
 В MongoDB данные хранятся в виде *документов*, которые сгруппированы в *коллекции*. 
@@ -58,6 +59,10 @@ NoSQL (Not Only SQL) - это термин, используемый для оп
 
 ## Устанвока и настройка
 
+Скачать: https://www.mongodb.com/try/download/community
+
+Консольный клиент mongo shell (`mongosh`): https://www.mongodb.com/try/download/shell\
+Отсутствует в репозитории пакетов Ubuntu.
 
 ### Docker
 
@@ -65,3 +70,58 @@ NoSQL (Not Only SQL) - это термин, используемый для оп
 docker pull
 ```
 Образ занимает примерно 800 Мб.
+
+
+Конфигурация docker compose:
+```yml
+version: '3.1'
+
+services:
+
+  # СУБД  
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+  
+  # веб-интерфейс для управления СУБД (написан на NodeJS)
+  mongo-express:
+    image: mongo-express
+    restart: always
+    # сервер будет доступе на порту 8081: в контейнере будет запущен на порту 8081
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: password
+      # строка конфигурации подключения веб-интерфейса к СУБД
+      ME_CONFIG_MONGODB_URL: mongodb://root:password@mongo:27017/
+      # mongodb - протокол
+      # root:password - логин и пароль
+      # @mongo:27017 - имя хоста и порт
+```
+
+Запуск (из папаки с compose файлом)
+```bash
+docker compose up
+```
+
+
+## Подключение
+
+Консоль (mongo shell), подключиться к локальному серверу (серверу на порту 27017):
+```bash
+mongosh -u username
+```
+
+Если не указывать имя пользователя, то запустится тестовая оболочка mongo shell.
+
+
+Подключение к удалённому серверу:
+```bash
+mongosh -u username "mongodb://yourMongoDBUrl"
+```

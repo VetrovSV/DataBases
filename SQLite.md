@@ -9,15 +9,16 @@
 Минимальная реализация SQL (стандарт SQL92).
 
 ## Установка
-**Windows**
+**Windows**\
 Скачайте и установите клиентское приложение SQLite (sqlite-tools-win-x64) 
 со страницы sqlite.org/download.html.
 
-**Ubuntu**
+**Ubuntu**\
 Установка Sqlite3 в ОС Убунту: `sudo apt install sqlite3`
 
-**Другие клиентские приложения**
-SQLite Manager – дополнение для Firefox
+**Клиентские приложения**'
+- DB Browser for SQLite
+- SQLite Manager – дополнение для Firefox
 
 ## Задание.
 

@@ -52,7 +52,13 @@ https://selectel.ru/blog/tutorials/how-to-install-mysql-on-windows/ \
 # MariaDB установка
 **Ubuntu**
 ```
+# установка
 sudo apt install mariadb-server -y
+
+# начальная настройка MariaDB 
+# программа для настройки называется также как в MySQL
+sudo mysql_secure_installation
+
 ```
 
 **Windows**\

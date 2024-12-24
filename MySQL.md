@@ -14,6 +14,7 @@
 
 Информация о MySQL на сайте https://stackshare.io/mysql.
 
+**MariaDB** - open-souce форк MySQL
 
 ### Установка
 
@@ -23,7 +24,7 @@
 
 **Ubuntu**
 ```bash
-# устанвока
+# устанвока MySQL
 sudo apt install mysql-server
 
 # запуск сервиса
@@ -47,6 +48,15 @@ https://selectel.ru/blog/tutorials/how-to-install-mysql-on-windows/ \
 или https://www.mysqltutorial.org/getting-started-with-mysql/install-mysql/ (английский) 
 или https://dev.mysql.com/doc/refman/8.3/en/installing.html (английский) 
 
+
+# MariaDB установка
+**Ubuntu**
+```
+sudo apt install mariadb-server -y
+```
+
+**Windows**\
+Страница для скачивания: https://mariadb.org/download/
 
 
 ## Настройка докер образа

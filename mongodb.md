@@ -58,6 +58,10 @@ NoSQL (Not Only SQL) - это термин, используемый для оп
 
 
 ## Устанвока и настройка
+- СУБД mongodb
+- mongo shell - консольный клиент для СУБД
+- Легковсенаый веб-сервер для управления СУБД - mongo-express
+- [MongoDB Compass](https://www.mongodb.com/docs/compass/current/install/) - клиентское приложение, имет встроенный mongo shell.
 
 Скачать: https://www.mongodb.com/try/download/community
 
